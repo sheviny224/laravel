@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('planets', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->integer('size_in_km');
-            
-            $table->timestamps();
+        Schema::table('planets', function (Blueprint $table) {
+            $table->foreignId('solar_systems_id');
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('planets');
+        Schema::table('planets', function (Blueprint $table) {
+            //
+        });
     }
 };
