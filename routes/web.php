@@ -1,14 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocentController;
+use App\Http\Controllers\VakController;
 
-Route::get('/planeten', function () {
-    $planeten = ["mars", "jupiter", "uranus", "pluto", "arrde", "neptunus", "venus"];
-    return ($planeten);
-});
-
-
-Route::get('/', function () {
-    $planeten = ["mars", "jupiter", "uranus", "pluto", "arrde", "neptunus", "venus"];
-    return view('welcome')->with(['planeten' => $planeten]);
-});
+Route::get('/docenten', [DocentController::class, 'index']);
+Route::get('/vakken', [VakController::class, 'index']);
