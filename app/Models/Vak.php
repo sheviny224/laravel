@@ -9,6 +9,9 @@ class Vak extends Model
 {
     use HasFactory;
 
+    
+    protected $table = 'vakken';
+
     protected $fillable = ['naam', 'beschrijving', 'docent_id'];
 
     public function docent()
